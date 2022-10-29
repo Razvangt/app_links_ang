@@ -1,0 +1,14 @@
+    <mat-card class="parent">
+        <form [formGroup]="checkoutForm" class="example-form"  (ngSubmit)="onSubmit()" #myForm>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Site</mat-label>
+                <input matInput placeholder="https://Site.com"  (change)="fillName()"  formControlName="site">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Name"  value="{{values}}" formControlName="name">
+            </mat-form-field>
+            <button mat-raised-button  color="primary" class="button-add" [disabled]="!checkoutForm.valid" type="submit">Add</button>
+        </form>
+    </mat-card>
+

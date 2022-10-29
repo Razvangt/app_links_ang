@@ -1,0 +1,11 @@
+{
+  "configurations": [
+    {
+      "type": "command",
+      "name": "angunlar run",
+      "program": "ng",
+      "args": ["serve"],
+    },
+
+  ]
+}
