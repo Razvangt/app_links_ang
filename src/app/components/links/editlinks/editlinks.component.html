@@ -1,14 +1,43 @@
 <mat-card class="parent">
-    <form sclass="example-form" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
-        <mat-form-field class="example-full-width"  appearance="fill">
-            <mat-label>Site</mat-label>
-            <input matInput placeholder="https://Site.com" value="{{siteInp}}" formControlName="site">
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Name</mat-label>
-            <input matInput placeholder="Name" value="{{nameInp}}"  formControlName="name">
-        </mat-form-field>
-        <button mat-raised-button  color="primary" (click)="back()" class="button-add">Back</button>
-        <button mat-raised-button  color="primary" type="submit" [disabled]="!checkoutForm.valid" class="button-add">Update</button>
-    </form>
+  <form
+    sclass="example-form"
+    [formGroup]="checkoutForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Site</mat-label>
+      <input
+        matInput
+        placeholder="https://Site.com"
+        value="{{ siteInp }}"
+        formControlName="site"
+      />
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input
+        matInput
+        placeholder="Name"
+        value="{{ nameInp }}"
+        formControlName="name"
+      />
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="back()"
+      class="button-add"
+    >
+      Back
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!checkoutForm.valid"
+      class="button-add"
+    >
+      Update
+    </button>
+  </form>
 </mat-card>

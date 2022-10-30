@@ -1,4 +1,10 @@
-
-<div class="Box" (click)="goTo()">
-    <h1>{{link.name}}</h1>
+<div class="grid-container">
+    <mat-grid-tile
+      *ngFor="let link of this.links"
+      [colspan]="1"
+      [rowspan]="1">
+    <mat-card (click)="goTo(link.url.toString())">
+        <h1>{{link.name}}</h1>
+    </mat-card>
+    </mat-grid-tile>
 </div>

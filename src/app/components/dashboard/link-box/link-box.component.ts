@@ -7,12 +7,11 @@ import { Link } from 'src/app/shared/models/linkModel';
   styleUrls: ['./link-box.component.css']
 })
 export class LinkBoxComponent  {
-  
-  @Input() link!: Link;
+  @Input() links!: Link[];
   constructor() { }
 
-  goTo() {
-    window.open(this.link.url.toString(), '_blank');
+  goTo(url: string) {
+    window.open(url, '_blank');
   }
 }
 
