@@ -1,4 +1,5 @@
 <div class="grid-container">
+  <div cdkDropListGroup>
   <mat-grid-list cols="2" rowHeight="400px">
     <mat-grid-tile
       *ngFor="let card of cards | async"
@@ -18,17 +19,22 @@
               <mat-icon>more_vert</mat-icon>
             </button>
             <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Reduce</button>
               <button mat-menu-item>Edit</button>
               <button mat-menu-item>Remove</button>
             </mat-menu>
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-            <app-link-box [links]="card.links" class="box"></app-link-box>
+          <div
+          cdkDropList
+          [cdkDropListData]="card.links"
+          class="example-list"
+          cdkDropListSortingDisabled
+          (cdkDropListDropped)="drop($event)"></div>
+          <div class="example-box" *ngFor="let item of card.links" cdkDrag>{{item.name}}</div>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
+  </div>
 </div>

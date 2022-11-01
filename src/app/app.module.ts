@@ -26,6 +26,7 @@ import { MatDialogModule} from '@angular/material/dialog';
 import { AddLinkComponent } from './components/add-link/add-link.component';
 import { EditlinksComponent } from './components/links/editlinks/editlinks.component';
 import { LinkBoxComponent } from './components/dashboard/link-box/link-box.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { LinkBoxComponent } from './components/dashboard/link-box/link-box.compo
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
+    DragDropModule,
     HttpClientModule
   ],
   providers: [LinksServiceService, ],
